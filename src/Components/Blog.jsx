@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const truncateString = (str, num) => {
     if (str.length > num) {
@@ -9,12 +9,13 @@ const truncateString = (str, num) => {
     }
 }
 const Blog = (props) => {
+    const { id, title, body } = props.blog;
     return (
         <article>
-            <h1>ID: {props.blog.id}</h1>
-            <h2>Title: {props.blog.title}</h2>
-            <p>Descripton: {truncateString(props.blog.body, 100)}</p>
-            <Link to={props.blog.title}>Learn More</Link>
+            <h1>ID: id</h1>
+            <h2>Title: {title}</h2>
+            <p>Descripton: {truncateString(body, 100)}</p>
+            <Link to={title} state={{ id, title, body }}>Learn More</Link>
         </article>
     )
 }
