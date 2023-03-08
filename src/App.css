@@ -7,6 +7,28 @@
   pointer-events: none;
 }
 
+section {
+  display: grid;
+  grid-gap: 1rem;
+
+}
+
+article {
+  background-color: aliceblue;
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  section {
+    grid-template-columns: auto auto auto;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,6 +54,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
