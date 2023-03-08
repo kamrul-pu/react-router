@@ -7,6 +7,7 @@ import Contact from './Components/Contact';
 import Blogs from './Components/Blogs';
 import Errors from './Components/Errors';
 import BlogDetails from './Components/BlogDetails';
+import User from './Components/User';
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blogs' element={<Blogs />} />
+        {/* using useParams */}
         <Route path="/blogs/:title" element={<BlogDetails />} />
+        {/* Using query params */}
+        <Route path="/user" element={<User />} />
         <Route path='*' element={<Errors />} />
       </Routes>
     </BrowserRouter>
